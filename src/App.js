@@ -8,6 +8,8 @@ import AutoDismissAlert from './components/shared/AutoDismissAlert/AutoDismissAl
 import Header from './components/shared/Header'
 import RequireAuth from './components/shared/RequireAuth'
 import Home from './components/Home'
+import IndexPlants from './components/Plants/IndexPlants'
+import ShowPlant from './components/Plants/ShowPlant'
 import SignUp from './components/auth/SignUp'
 import SignIn from './components/auth/SignIn'
 import SignOut from './components/auth/SignOut'
@@ -49,6 +51,19 @@ const App = () => {
 						path='/sign-up'
 						element={<SignUp msgAlert={msgAlert} setUser={setUser} />}
 					/>
+				{/* plants: INDEX route */}
+					<Route
+					path='/plants'
+					element={<IndexPlants msgAlert={msgAlert} user={user} />
+					}
+				/>
+				{/* plants: SHOW route */}
+					<Route
+					path='/plants/:id'
+					element={<ShowPlant msgAlert={msgAlert} user={user} />
+					}
+				/>	
+
 					<Route
 						path='/sign-in'
 						element={<SignIn msgAlert={msgAlert} setUser={setUser} />}
